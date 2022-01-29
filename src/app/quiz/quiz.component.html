@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Test your knowledge</h1>
+  <div class="cards">
+    <app-quiz-question class="card" [showCorrectAnswer]="isGameEnded" *ngFor="let q of questions; let index = index" [question]="q" (selectedAnswerChange)="questionAnswered($event, index)">
+    </app-quiz-question>
+  </div>
+  <div *ngIf="isGameEnded" class="result">Result: {{result | percent}}</div>
+</div>
+
